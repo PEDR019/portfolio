@@ -6,11 +6,12 @@
   background-image: linear-gradient(
     rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0.3)
-  ), url('https://images.squarespace-cdn.com/content/v1/650c773aadec7638682ccb9a/1730426950070-L0JCWKY4UMJSNT3GXNIZ/unsplash-image-Bs_ac8eRkME.jpg');
-  background-size: 100%;
-  background-position: 0 15%;
+  ), url('https://thumbs.dreamstime.com/b/energy-power-icons-set-header-banner-canada-flag-sustainable-generation-heavy-industry-concrete-textured-81634807.jpg?w=992');
+  background-size: auto 150px;
+  background-position: center 35%;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   z-index: 1000;
+  filter: grayscale(100%);
 }
 
 .nav-container {

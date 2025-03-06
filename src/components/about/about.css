@@ -9,38 +9,85 @@
 .about-container {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .about-content {
   display: flex;
-  gap: 40px;
-  margin-top: 40px;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.profile-section {
+  flex: 1;
+}
+
+.profile-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-text {
-  flex: 1;
-  line-height: 1.6;
+  flex: 2;
   color: #ffffff;
 }
 
-.skills {
-  flex: 1;
+.about-text h2 {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
 }
 
-h2, h3 {
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.skills-section {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skills-section h3 {
   color: #ffffff;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.skills-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .skills-list span {
+  background-color: #0466c8;
+  color: white;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 14px;
-  color: white;
-  margin: 5px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.skills-list span:hover {
+  transform: translateY(-3px);
 }
 
 .skills-list span.react {
   background-color: #61DAFB;
+  color: #000000;
 }
 
 .skills-list span.javascript {
@@ -50,8 +97,10 @@ h2, h3 {
 
 .skills-list span.html {
   background-color: #E34F26;
+  color: #ffffff;
 }
 
 .skills-list span.css {
   background-color: #1572B6;
+  color: #ffffff;
 }
