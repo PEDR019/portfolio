@@ -2,18 +2,25 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #000000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 60px;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)
+  ), url('https://images.squarespace-cdn.com/content/v1/650c773aadec7638682ccb9a/1730426950070-L0JCWKY4UMJSNT3GXNIZ/unsplash-image-Bs_ac8eRkME.jpg');
+  background-size: 100%;
+  background-position: 0 15%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   z-index: 1000;
 }
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  height: 100%;
 }
 
 .nav-links {
@@ -25,16 +32,12 @@
 }
 
 .nav-links li {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
   cursor: pointer;
-  font-weight: 500;
-  color: #ffffff;
-  transition: color 0.3s ease;
-}
-
-.logo {
-  color: #ffffff;
 }
 
 .nav-links li:hover {
-  color: #0466c8;
+  color: #66b2ff;
 }

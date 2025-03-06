@@ -7,16 +7,17 @@ const Header = () => {
   };
 
   return (
-    <header className="header">
-      <nav className="nav-container">
-        <div className="logo">Your Name</div>
-        <ul className="nav-links">
-          <li onClick={() => scrollToSection("about")}>About</li>
-          <li onClick={() => scrollToSection("portfolio")}>Portfolio</li>
-          <li onClick={() => scrollToSection("contact")}>Contact</li>
-        </ul>
-      </nav>
-    </header>
+    <>
+      <header className="header">
+        <nav className="nav-container">
+          <ul className="nav-links">
+            <li onClick={() => scrollToSection("about")}>About</li>
+            <li onClick={() => scrollToSection("portfolio")}>Portfolio</li>
+            <li onClick={() => scrollToSection("contact")}>Contact</li>
+          </ul>
+        </nav>
+      </header>
+    </>
   );
 };
 
