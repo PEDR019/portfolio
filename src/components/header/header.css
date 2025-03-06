@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #000000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   z-index: 1000;
 }
@@ -27,7 +27,12 @@
 .nav-links li {
   cursor: pointer;
   font-weight: 500;
+  color: #ffffff;
   transition: color 0.3s ease;
+}
+
+.logo {
+  color: #ffffff;
 }
 
 .nav-links li:hover {

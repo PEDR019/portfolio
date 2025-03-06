@@ -20,10 +20,10 @@ const About = () => {
           <div className="skills">
             <h3>My Skills</h3>
             <div className="skills-list">
-              <span>React</span>
-              <span>JavaScript</span>
-              <span>HTML5</span>
-              <span>CSS3</span>
+              <span className="react">React</span>
+              <span className="javascript">JavaScript</span>
+              <span className="html">HTML5</span>
+              <span className="css">CSS3</span>
             </div>
           </div>
         </div>

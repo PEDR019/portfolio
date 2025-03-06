@@ -1,6 +1,6 @@
 .about-section {
   padding: 80px 20px;
-  background-color: #e9ecef;
+  background-color: #343a40;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -20,35 +20,38 @@
 .about-text {
   flex: 1;
   line-height: 1.6;
+  color: #ffffff;
 }
 
 .skills {
   flex: 1;
 }
 
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
+h2, h3 {
+  color: #ffffff;
 }
 
 .skills-list span {
-  background-color: #0466c8;
-  color: white;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 14px;
+  color: white;
+  margin: 5px;
 }
 
-h2 {
-  font-size: 2.5rem;
-  color: #212529;
-  margin-bottom: 20px;
+.skills-list span.react {
+  background-color: #61DAFB;
 }
 
-h3 {
-  font-size: 1.8rem;
-  color: #212529;
-  margin-bottom: 15px;
+.skills-list span.javascript {
+  background-color: #F7DF1E;
+  color: #000000;
+}
+
+.skills-list span.html {
+  background-color: #E34F26;
+}
+
+.skills-list span.css {
+  background-color: #1572B6;
 }
