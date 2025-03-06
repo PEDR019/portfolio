@@ -7,14 +7,14 @@ const Footer = () => {
     <footer className="footer">
       <div className="social-links">
         <a
-          href="https://github.com/SEU_USERNAME_GITHUB"
+          href="https://github.com/PEDR019"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaGithub />
         </a>
         <a
-          href="https://linkedin.com/in/SEU_USERNAME_LINKEDIN"
+          href="https://www.linkedin.com/in/pedrooliveiradev1/"
           target="_blank"
           rel="noopener noreferrer"
         >
