@@ -153,3 +153,8 @@
     filter: brightness(1.2);
   }
 }
+
+.skills-list span.nodejs {
+  background-color: #68A063;
+  color: #ffffff;
+}

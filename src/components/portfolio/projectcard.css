@@ -1,35 +1,137 @@
 .project-card {
-  width: 300px;
+  width: 400px;
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 15px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
 .project-image {
   width: 100%;
-  height: 200px;
+  height: 280px;
   overflow: hidden;
+  position: relative;
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Special treatment for the recipes app GIF */
+.project-image img[src*="recipes-app.gif"] {
+  object-fit: contain;
+  transform: scale(1.5); /* Increase zoom level by 50% */
+  transform-origin: center center;
+}
+
+.project-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Special hover effect for the recipes app GIF */
+.project-image img[src*="recipes-app.gif"]:hover {
+  transform: scale(1.6); /* Slightly more zoom on hover */
 }
 
 .project-info {
-  padding: 20px;
+  padding: 25px;
 }
 
 .project-info h3 {
-  margin: 0 0 10px 0;
+  margin: 0 0 15px 0;
   color: #212529;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .project-info p {
   color: #6c757d;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: #0466c8;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
   font-size: 14px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.read-more-btn:hover {
+  text-decoration: underline;
+}
+.project-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.visit-btn, .live-btn {
+  background-color: #121212;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.visit-btn:hover, .live-btn:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+}
+
+.visit-btn:active, .live-btn:active {
+  transform: translateY(0);
+}
+
+.github-icon {
+  fill: white;
+}
+
+/* Indicador piscante para o botão Live */
+.live-indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+/* Animação para o indicador piscante */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
