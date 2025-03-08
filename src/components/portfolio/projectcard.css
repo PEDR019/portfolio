@@ -19,30 +19,19 @@
   overflow: hidden;
   position: relative;
 }
-
 .project-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Changed from cover to contain */
   transition: transform 0.5s ease;
-}
-
-/* Special treatment for the recipes app GIF */
-.project-image img[src*="recipes-app.gif"] {
-  object-fit: contain;
-  transform: scale(1.5); /* Increase zoom level by 50% */
+  transform: scale(1.5); /* Increase zoom level by 50% for all */
   transform-origin: center center;
 }
 
+/* Apply hover effect to all project images */
 .project-image img:hover {
-  transform: scale(1.05);
+  transform: scale(1.6); /* Slightly more zoom on hover for all */
 }
-
-/* Special hover effect for the recipes app GIF */
-.project-image img[src*="recipes-app.gif"]:hover {
-  transform: scale(1.6); /* Slightly more zoom on hover */
-}
-
 .project-info {
   padding: 25px;
 }
