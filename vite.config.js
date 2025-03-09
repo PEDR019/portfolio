@@ -6,5 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: '0.0.0.0',
-  }
+  },
+  build: {
+    outDir: 'dist', // Ensure this is the output directory Vite will use
+  },
 })
