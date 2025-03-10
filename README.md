@@ -1,17 +1,38 @@
-## Running React on Replit
+# 🌐 My Portfolio
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
+Welcome to my portfolio repository! This project was developed to showcase my skills and projects as a web developer.
 
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
+## 📸 Overview
+This portfolio is an interactive showcase of some of my main projects, technical skills, and contact information. Feel free to explore and learn more about my work.
 
-Using the two in conjunction is one of the fastest ways to build a web app.
+---
 
-### Getting Started
-- Hit run
-- Edit [App.jsx](#src/App.jsx) and watch it live update!
+## ⚙️ How to Run the Project Locally
 
-By default, Replit runs the `dev` script, but you can configure it by changing the `run` field in the [configuration file](#.replit). Here are the vite docs for [serving production websites](https://vitejs.dev/guide/build.html)
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/PEDR019/portfolio.git]
 
-### Typescript
 
-Just rename any file from `.jsx` to `.tsx`. You can also try our [TypeScript Template](https://replit.com/@replit/React-TypeScript)
+### 2. Navigate to the Project Folder
+cd /portfolio.git
+
+### 3. Install Dependencies
+
+npm install
+
+### 4. Start the Development Server
+
+npm start
+
+
+----
+
+
+The project will be running at http://localhost:3000
+
+
+📬 Contact
+If you want to get in touch:
+
+Email: pedro.oliveira.dev1@outlook.com
