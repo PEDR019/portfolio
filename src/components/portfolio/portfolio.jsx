@@ -18,16 +18,9 @@ const Portfolio = () => {
       title: "AlarmClock",
       description: "The \"AlarmClock\" project is a simple alarm built with React. It allows users to set personalized alarms through an intuitive and user-friendly interface. The application was developed using React's component-based architecture, with state management to handle alarm times and trigger notifications. It demonstrates how React can be used to create interactive applications with minimal complexity.",
       image: alarmClockGif,
-      link: "https://github.com/PEDR019/alarm-clock", // Update with your GitHub repo link
-      liveLink: "https://www.naturl.link/alarm-clock", // Update with your live demo link
+      link: "https://github.com/PEDR019/alarm-clock", 
+      liveLink: "https://www.naturl.link/alarm-clock", 
       className: "alarm-clock"
-    },
-    {
-      title: "Task Manager",
-      description: "Full-stack task management application with real-time updates. Users can create, organize, and prioritize tasks across different projects and categories. The app includes features like deadline tracking, progress monitoring, team collaboration tools, and customizable notification settings.",
-      image: "https://picsum.photos/300/200?random=2",
-      link: "https://github.com/project2",
-      liveLink: "https://task-manager-demo.example.com"
     }
   ];
 
