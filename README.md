@@ -14,19 +14,18 @@ This portfolio is an interactive showcase of some of my main projects, technical
 git clone [https://github.com/PEDR019/portfolio.git] ###
 ```
 
-```bash
 ### 2. Navigate to the Project Folder
+```bash
 cd /portfolio.git
 ```
 
-```bash
 ### 3. Install Dependencies
+```bash
 npm install
 ```
 
-```bash
 ### 4. Start the Development Server
-
+```bash
 npm start
 ```
 
