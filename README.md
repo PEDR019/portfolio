@@ -11,7 +11,7 @@ This portfolio is an interactive showcase of some of my main projects, technical
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/PEDR019/portfolio.git]
+git clone [https://github.com/PEDR019/portfolio.git] ###
 
 
 ### 2. Navigate to the Project Folder
