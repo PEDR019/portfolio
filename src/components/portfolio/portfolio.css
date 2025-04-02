@@ -33,6 +33,8 @@
   max-width: 1000px;
   margin: 0 auto;
   width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 /* Carousel */
@@ -95,15 +97,22 @@
 
 /* Specific positioning for each arrow */
 .prev-arrow {
-  left: 260px; 
+  left: 260px;
 }
 
 .next-arrow {
-  right: 260px; 
+  right: 260px;
 }
 
-
 @media (max-width: 768px) {
+  .portfolio-section {
+    padding: 80px 15px;
+  }
+
+  .carousel-container {
+    padding: 0 10px;
+  }
+  
   .carousel-arrow {
     width: 36px;
     height: 36px;
@@ -120,5 +129,28 @@
   
   .carousel {
     margin-top: 20px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-section {
+    padding: 60px 10px;
+  }
+  
+  .carousel-container {
+    padding: 0 5px;
+  }
+  
+  .carousel {
+    padding: 0 5px;
+  }
+  
+  .prev-arrow {
+    left: 5px;
+  }
+  
+  .next-arrow {
+    right: 5px;
   }
 }

@@ -1,8 +1,8 @@
 .about-section {
-  padding: 80px 20px;
+  padding: 120px 20px 80px;
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2a/Vancouver_%28BC%2C_Canada%29%2C_Harbour_Centre_--_2022_--_1860.jpg');
   background-size: cover;
-  background-position: center 10%; /* Changed from "center" to "center 10%" */
+  background-position: center 10%;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -27,25 +27,33 @@
   width: 100%;
   position: relative;
   z-index: 2; /* Place above the overlay */
-}
-
-/* Replace the removed about-content styling with direct layout for container children */
-.about-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; /* Center horizontally */
 }
 
-.profile-section {
-  flex: 1;
-  margin-bottom: 60px;
+/* New container for maple and text to control layout better */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.maple-photo {
+  width: 250px; /* Reduced size */
+  height: 250px; /* Reduced size */
+  margin: 0 auto 80px; /* Increased bottom margin significantly */
+  position: relative;
+  overflow: visible;
 }
 
 .about-text {
-  flex: 2;
   color: #ffffff;
   margin-bottom: 60px;
-  padding-left: 40px;
-  max-width: 65%;
+  max-width: 800px; /* Fixed width instead of percentage */
+  text-align: center; /* Center text */
+  padding: 0 20px; /* Add some padding */
 }
 
 .about-text h2 {
@@ -114,14 +122,6 @@
   color: #ffffff;
 }
 
-/* Add this rule to create a colored overlay */
-.maple-photo {
-  width: 300px;
-  height: 300px;
-  margin: 0 auto 30px;
-  position: relative;
-}
-
 /* Keep the existing image properties */
 .profile-image {
   width: 100%;
@@ -129,7 +129,7 @@
   position: relative;
   margin: 0 auto;
   filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
-  
+ 
   -webkit-mask-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6d/Maple_leaf_--_NDP.svg");
   mask-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6d/Maple_leaf_--_NDP.svg");
   -webkit-mask-size: contain;
@@ -142,15 +142,70 @@
 
 /* Using fixed pixel values for precise positioning */
 .profile-image img {
-  width: 360px; 
-  height: 360px;
+  width: 300px; /* Reduced size */
+  height: 300px; /* Reduced size */
   object-fit: cover;
-  /* Position the face using fixed values */
-  object-position: center -50 px; /* Adjust this value to move vertically */
+  object-position: center -50px;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%); /* Center horizontally */
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 768px) {
+  .about-section {
+    padding-top: 100px;
+  }
+
+  .maple-photo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 100px; /* Still keep good spacing */
+  }
+ 
+  .profile-image img {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .about-text {
+    padding: 0 15px;
+  }
+  
+  .about-text h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding-top: 80px;
+    background-position: top right 43%;
+  }
+
+  .maple-photo {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 100px;
+    right: 25%;
+    top: 2%;
+  }
+ 
+  .profile-image img {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .about-text h2 {
+    font-size: 1.8rem;
+    padding-top: 35px;
+    padding-right: 60px;
+  }
+  
+  .about-text p {
+    font-size: 0.95rem;
+  }
 }
 
 .skills-list span.nodejs {
