@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ProjectCard from "./projectcard";
 import "./portfolio.css";
 import recipesAppGif from "../../images/recipes-app.gif";
@@ -25,25 +25,107 @@ const Portfolio = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [startX, setStartX] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const carouselRef = useRef(null);
 
-  const goToProject = (index) => {
-    setCurrentIndex(index);
+  // Função para navegar para o próximo projeto
+  const nextProject = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+  };
+
+  // Função para navegar para o projeto anterior
+  const prevProject = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
+  };
+
+  // Manipuladores de eventos para deslizar com o dedo
+  const handleTouchStart = (e) => {
+    setStartX(e.touches[0].clientX);
+    setIsDragging(true);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (!isDragging) return;
+    
+    const currentX = e.changedTouches[0].clientX;
+    const diff = startX - currentX;
+    
+    // Se o deslize for significativo (mais de 50px), mude de slide
+    if (diff > 50) {
+      nextProject(); // Deslizou para a esquerda -> próximo projeto
+    } else if (diff < -50) {
+      prevProject(); // Deslizou para a direita -> projeto anterior
+    }
+    
+    setIsDragging(false);
+  };
+
+  // Manipuladores de eventos para mouse (desktop)
+  const handleMouseDown = (e) => {
+    setStartX(e.clientX);
+    setIsDragging(true);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+  };
+
+  const handleMouseUp = (e) => {
+    if (!isDragging) return;
+    
+    const diff = startX - e.clientX;
+    
+    // Se o deslize for significativo (mais de 50px), mude de slide
+    if (diff > 50) {
+      nextProject(); // Deslizou para a esquerda -> próximo projeto
+    } else if (diff < -50) {
+      prevProject(); // Deslizou para a direita -> projeto anterior
+    }
+    
+    setIsDragging(false);
+  };
+
+  // Limpa o estado de arrastar se o mouse sair da área do carrossel
+  const handleMouseLeave = () => {
+    setIsDragging(false);
   };
 
   return (
     <section id="portfolio" className="portfolio-section">
       <h2>My Projects</h2>
-      <div className="carousel">
-        <ProjectCard {...projects[currentIndex]} />
-      </div>
-      <div className="carousel-dots">
-        {projects.map((_, index) => (
-          <button
-            key={index}
-            className={`dot ${currentIndex === index ? "active" : ""}`}
-            onClick={() => goToProject(index)}
-          />
-        ))}
+      
+      <div className="carousel-container">
+        <div 
+          className="carousel"
+          ref={carouselRef}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="carousel-content">
+            <div className="project-card-wrapper">
+              <ProjectCard {...projects[currentIndex]} />
+              
+              {/* Setas de navegação */}
+              <button className="carousel-arrow prev-arrow" onClick={prevProject}>
+                {"<"}
+              </button>
+              
+              <button className="carousel-arrow next-arrow" onClick={nextProject}>
+                {">"}
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

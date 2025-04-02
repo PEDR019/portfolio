@@ -100,7 +100,7 @@
   fill: white;
 }
 
-/* Indicador piscante para o botão Live */
+/* Blinking indicator for the Live button */
 .live-indicator {
   width: 10px;
   height: 10px;
@@ -109,7 +109,7 @@
   animation: pulse 1.5s infinite;
 }
 
-/* Animação para o indicador piscante */
+/* Animation for the blinking indicator */
 @keyframes pulse {
   0% {
     opacity: 1;

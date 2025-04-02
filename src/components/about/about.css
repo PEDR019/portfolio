@@ -44,6 +44,8 @@
   flex: 2;
   color: #ffffff;
   margin-bottom: 60px;
+  padding-left: 40px;
+  max-width: 65%;
 }
 
 .about-text h2 {
@@ -112,53 +114,43 @@
   color: #ffffff;
 }
 
-.profile-image {
+/* Add this rule to create a colored overlay */
+.maple-photo {
   width: 300px;
   height: 300px;
+  margin: 0 auto 30px;
+  position: relative;
+}
+
+/* Keep the existing image properties */
+.profile-image {
+  width: 100%;
+  height: 100%;
   position: relative;
   margin: 0 auto;
   filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+  
+  -webkit-mask-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6d/Maple_leaf_--_NDP.svg");
+  mask-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6d/Maple_leaf_--_NDP.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }
 
-.profile-image::before {
-  content: '';
-  position: absolute;
-  inset: -5px;
-  background: linear-gradient(135deg,
-    rgba(255,255,255,0.4),
-    rgba(0,149,255,0.2),
-    rgba(255,255,255,0.4)
-  );
-  clip-path: polygon(
-    30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%,
-    10% 30%, 20% 15%, 40% 5%, 60% 5%, 80% 15%, 90% 30%,
-    90% 70%, 80% 85%, 60% 95%, 40% 95%, 20% 85%, 10% 70%
-  );
-  animation: bubbleEffect 3s ease-in-out infinite;
-  z-index: 2;
-  border-radius: 40%;
-}
-
+/* Using fixed pixel values for precise positioning */
 .profile-image img {
-  width: 100%;
-  height: 100%;
+  width: 360px; 
+  height: 360px;
   object-fit: cover;
-  clip-path: polygon(
-    30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%,
-    10% 30%, 20% 15%, 40% 5%, 60% 5%, 80% 15%, 90% 30%,
-    90% 70%, 80% 85%, 60% 95%, 40% 95%, 20% 85%, 10% 70%
-  );
-}
-
-@keyframes bubbleEffect {
-  0%, 100% {
-    transform: scale(1.01) translateY(0);
-    filter: brightness(1);
-  }
-  50% {
-    transform: scale(1.04) translateY(-3px);
-    filter: brightness(1.2);
-  }
+  /* Position the face using fixed values */
+  object-position: center -50 px; /* Adjust this value to move vertically */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
 }
 
 .skills-list span.nodejs {

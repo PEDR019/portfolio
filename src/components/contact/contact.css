@@ -11,6 +11,8 @@
   max-width: 500px;
   width: 100%;
   margin: 50px auto 0;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 .form-content {
@@ -18,11 +20,13 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  width: 100%;
 }
 
 .form-group {
   width: 100%;
   text-align: center;
+  box-sizing: border-box;
 }
 
 label {
@@ -38,6 +42,7 @@ input, textarea {
   border: 1px solid #ced4da;
   border-radius: 4px;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
 textarea {
@@ -61,25 +66,158 @@ textarea {
   background-color: #0353a4;
 }
 
+/* Styles for the typing effect */
+.typing-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
 
-.typing-effect {
+.typing-title {
+  font-size: 36px;
+  color: #212529;
+  font-weight: bold;
+  min-height: 40px; /* Minimum height to avoid layout jumps */
+}
+
+/* Style for the pencil icon */
+.pencil-icon {
   display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: 2px;
-  animation: 
-    typing-erasing 4s steps(20) infinite,
-    blink-caret .75s step-end infinite;
-  border-right: 3px solid #0466c8;
+  width: 36px;
+  height: 36px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 10px;
 }
 
-@keyframes typing-erasing {
-  0%, 100% { width: 0 }
-  40%, 60% { width: 300px }
+/* Writing animation */
+.writing-animation {
+  animation-name: writing;    
+  animation-duration: 4s;
 }
 
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: #0466c8; }
+@keyframes writing {
+  0%  {transform: translate(0px,0px);}
+  2%  {transform: translate(5px,-5px);}
+  4%  {transform: translate(0px,0px);}
+  6%  {transform: translate(5px,-5px);}
+  8% {transform: translate(0px,0px);}
+  10% {transform: translate(5px,-5px);}
+  12% {transform: translate(0px,0px);}
+  14% {transform: translate(5px,-5px);}
+  16% {transform: translate(0px,0px);}
+  18% {transform: translate(5px,-5px);}
+  20% {transform: translate(0px,0px);}
+  22% {transform: translate(5px,-5px);}
+  24% {transform: translate(5px,-5px);}
+  26% {transform: translate(5px,-5px);}
+  28% {transform: translate(0px,0px);}
+  30% {transform: translate(5px,-5px);}
+  32% {transform: translate(0px,0px);}
+  34% {transform: translate(5px,-5px);}
+  36% {transform: translate(0px,0px);}
+  38% {transform: translate(5px,-5px);}
+  40% {transform: translate(0px,0px);}
+  42% {transform: translate(5px,-5px);}
+  44% {transform: translate(5px,-5px);}
+  46% {transform: translate(5px,-5px);}
+  48% {transform: translate(0px,0px);}
+  50% {transform: translate(5px,-5px);}
+  52% {transform: translate(0px,0px);}
+  54% {transform: translate(5px,-5px);}
+  56% {transform: translate(0px,0px);}
+  58% {transform: translate(5px,-5px);}
+  60% {transform: translate(0px,0px);}
+  62% {transform: translate(5px,-5px);}
+  64% {transform: translate(5px,-5px);}
+  66% {transform: translate(5px,-5px);}
+  68% {transform: translate(5px,-5px);}
+  70% {transform: translate(5px,-5px);}
+  72% {transform: translate(0px,0px);}
+  74% {transform: translate(5px,-5px);}
+  76% {transform: translate(0px,0px);}
+  78% {transform: translate(5px,-5px);}
+  80% {transform: translate(0px,0px);}
+  82% {transform: translate(5px,-5px);}
+  84% {transform: translate(0px,0px);}
+  86% {transform: translate(5px,-5px);}
+  88% {transform: translate(0px,0px);}
+  90% {transform: translate(5px,-5px);}
+  92% {transform: translate(0px,0px);}
+  94% {transform: translate(5px,-5px);}
+  96% {transform: translate(0px,0px);}
+  98% {transform: translate(5px,-5px);}
+  100% {transform: translate(0px,0px);}
+}
+
+/* Add this class to make the pencil disappear */
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.submit-status {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Media queries for improved responsiveness */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 10px;
+  }
+  
+  .contact-form {
+    padding: 0 10px;
+  }
+  
+  .typing-title {
+    font-size: 28px;
+  }
+  
+  .submit-btn {
+    width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-title {
+    font-size: 24px;
+  }
+  
+  .pencil-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+  }
+  
+  input, textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .submit-btn {
+    width: 160px;
+    font-size: 14px;
+    padding: 10px 20px;
+  }
 }
