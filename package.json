@@ -5,7 +5,7 @@
   "description": "React TypeScript, using Vite bundler",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --outDir $BUILD_OUTPUT_DIR",
     "preview": "vite preview",
     "start": "vite"
   },
